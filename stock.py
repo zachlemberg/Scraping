@@ -76,7 +76,10 @@ def ticker(stock):
 	prev = info['previous']
 	pric = info['price']
 	while 1:
-		os.system("cls")
+		try: #makes the code more portable
+			os.system("cls")#windows
+		except:
+			os.system("clear")#unix
 		print name + "\nOpening: " + open + "\nPrevious: " + prev
 		print "Price: " + pric
 		try:
