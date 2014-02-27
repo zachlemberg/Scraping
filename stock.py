@@ -65,11 +65,12 @@ def base(stock):
 	return {'price':value,'name':name,'previous':prev,'open':open}
 
 def substr(string,sub):
+	"""basically subtracts a sub-string from a string"""
 	t = string.find(sub)
 	return string[0:t] + string[t+len(sub):]
 
 def ticker(stock):
-	"""This function runs a self updating console script, with stock info shown"""
+	"""self updating console, only function needed for stock tips"""
 	import time
 	info = base(stock)
 	name = info['name']
