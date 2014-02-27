@@ -69,6 +69,7 @@ def substr(string,sub):
 	return string[0:t] + string[t+len(sub):]
 
 def ticker(stock):
+	"""This function runs a self updating console script, with stock info shown"""
 	import time
 	info = base(stock)
 	name = info['name']
