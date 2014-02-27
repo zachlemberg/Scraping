@@ -63,3 +63,26 @@ def base(stock):
 			break
 	open = t[place+38:end]
 	return {'price':value,'name':name,'previous':prev,'open':open}
+
+def substr(string,sub):
+	t = string.find(sub)
+	return string[0:t] + string[t+len(sub):]
+
+def ticker(stock):
+	import time
+	info = base(stock)
+	name = info['name']
+	open = info['open']
+	prev = info['previous']
+	pric = info['price']
+	while 1:
+		os.system("cls")
+		print name + "\nOpening: " + open + "\nPrevious: " + prev
+		print "Price: " + pric
+		try:
+			print "Delta: " + str((float(substr(pric,','))/float(substr(prev,',')))-1) + "%"
+		except:
+			print "Delta: " + str((float(pric)/float(prev))-1) + "%"
+		time.sleep(5)
+		pric = update(stock)['price']
+		
