@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-#grabs relevant info on wikipedia.org
+#grabs age on a famous person
+#this is a script not a maintained definition for future use
 from urllib2 import urlopen
 url = "http://en.wikipedia.org/wiki/"
 asking = True
