@@ -4,6 +4,8 @@ from urllib2 import urlopen
 text = urlopen("http://hackaday.com/").read()
 head_index = []
 arti_index = []
+url_index = []
+urls = []
 titles = []
 info = []
 rando = 0
@@ -28,9 +30,13 @@ while next != -1:
 	next = text.find('<h2 class="entry-title">',next+1)
 	if next != -1:
 		head_index.append(next)
+		url_index.append(text.find('<a href="',next))
 for num in head_index:
 	rando = text.find('</h2>',num)
 	titles.append(substuff(subhtml(text[num:rando])))
+for t in url_index:
+	rando = text.find('/"',t)
+	urls.append(text[t+9:rando+1])
 next = 0
 while next != -1:
 	next = text.find('<div class="entry-content">',next+1)
@@ -42,4 +48,6 @@ for start in arti_index:
 for i in range(0,len(head_index)):
 	print titles[i]
 	print info[i]
+	print "URL: " + urls[i]
+	print "------------"
 	print " "
