@@ -19,6 +19,15 @@ Movies
 ======
 the function movies ----------- grabs movie times for regal 10 and regal 16
 
+celeb_age
+======
+the script asks for first name and last name with a space to get the age of that celebrity
+
+read_hacks
+=====
+this script grabs plain text from the internet site hackaday and puts it into the terminal
+ P.S. works well with ' | less ' in terminal (mac/linux) or ' | more ' in terminal (windows)
+
 
 
 Future
