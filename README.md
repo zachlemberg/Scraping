@@ -1,12 +1,7 @@
 Scraping
 ======
 
-python script for grabbing stock names and prices
-python script for grabbing movie times for vancouver,WA
-
-                  webscraps from finance.yahoo.com
-                  webscraps from fandango.com
-
+python script for grabbing useful information on internet
 so far....
 
 Stock
@@ -28,6 +23,10 @@ read_hacks
 this script grabs plain text from the internet site hackaday and puts it into the terminal
  P.S. works well with ' | less ' in terminal (mac/linux) or ' | more ' in terminal (windows)
 
+youtube_check
+=====
+this script writes a file to a specified file and checks if youtube channels you like have new videos
+ or not, first write just adds channel. also you can try to read the file to seem the newest videos
 
 
 Future
