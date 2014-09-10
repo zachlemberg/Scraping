@@ -6,7 +6,15 @@ url = "http://www.youtube.com/user/"
 #     url of youtube channel page example http://youtube.com/user/Collegehumor/featured
 channels = ["Collegehumor","Vsauce2","Computerphile"]
 #i am using unix filesystem here, but windows users need to only add there file path here
-f = open("/home/example_user/.channel_data").read()
+file = "/home/example_username/.channel_data"
+#this cactches error if the file was not made before the read
+try:
+	f = open(file).read()
+except:
+	b = open(file,'w')
+	b.write("test write")
+	b.close()
+	f = open(file).read()
 checking,i = True,0
 data,fin_url = '',''
 def find_1st_title(big_url):#grabs the first video title
@@ -17,7 +25,7 @@ def find_1st_title(big_url):#grabs the first video title
 	return source[title_index+7:title_end]
 while checking:
 	if i >= len(channels):
-		break
+		break#stop checking if i have checked all the channels
 	fin_url = url + channels[i] + "/videos"
 	new_title = find_1st_title(fin_url)
 	if channels[i] in f:
@@ -33,6 +41,6 @@ while checking:
 	data += channels[i] + new_title + "\n"
 	i += 1
 #again windows system paths or unix file paths are required here
-file = open("/home/example_user/.channel_data",'w')
-file.write(data)
-file.close()
+finished_data = open(file,'w')
+finished_data.write(data)
+finished_data.close()
