@@ -26,7 +26,11 @@ this script grabs plain text from the internet site hackaday and puts it into th
 youtube_check
 =====
 this script writes a file to a specified file and checks if youtube channels you like have new videos
- or not, first write just adds channel. also you can try to read the file to seem the newest videos
+ or not, first write just adds channel.
+ 
+ github_update.py
+ ====
+ writes files to computer from github in case of change for fast testing
 
 
 Future
