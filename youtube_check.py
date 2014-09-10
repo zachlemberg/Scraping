@@ -1,12 +1,25 @@
 #!/usr/bin/env python
 #check if there are new videos on the channels you like
+#channels are added in the youtube config page
 from urllib2 import urlopen
 url = "http://www.youtube.com/user/"
-#add channels you want to follow here, the channels are dervived from the
-#     url of youtube channel page example http://youtube.com/user/Collegehumor/featured
-channels = ["Collegehumor","Vsauce2","Computerphile"]
+#these are operations to read the channels from .youtube_config
+try:
+	t = open(".youtube_config").read()
+	a = t.find("channels:")
+	channels = (t[a+9:t.find("\n",a)]).split(",")
+except:
+	p = open(".youtube_config",'w')
+	p.write("#begin config\nchannels:Collegehumor,Vsauce2\n#end config")
+	p.write("\n-the channel names are dervived from url of youtube channel page")
+	p.write("Example http://www.youtube.com/user/Collegehumor/featured")
+	p.write("-add channel names in comma seperated list in continous line")
+	p.close()
+	t = open(".youtube_config").read()
+	a = t.find("channels:")
+	channels = (t[a+9:t.find("\n",a)]).split(",")
 #i am using unix filesystem here, but windows users need to only add there file path here
-file = "/home/example_username/.channel_data"
+file = ".channel_data" #local file stays with youtube_check.py
 #this cactches error if the file was not made before the read
 try:
 	f = open(file).read()
