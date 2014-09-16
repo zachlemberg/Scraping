@@ -4,6 +4,8 @@ Scraping
 python script for grabbing useful information on internet
 so far....
 
+definitions: needs further developement
+============
 Stock
 =====
 the function update -----------  grabs only the price of a stock
@@ -13,6 +15,10 @@ the function base   ----------- grabs the name, price, opening price, and previo
 Movies
 ======
 the function movies ----------- grabs movie times for regal 10 and regal 16
+
+
+SCRIPTS: reliable scripts
+========
 
 celeb_age
 ======
@@ -31,8 +37,7 @@ this script writes a file to a specified file and checks if youtube channels you
  github_update.py
  ====
  writes files to computer from github in case of change for fast testing
-
-
-Future
-
-hoping to make movies query a region or city based query that returns all movie theaters and movie times
+ 
+ net_speed.py
+ ====
+ checks the speed of your network in python
