@@ -1,0 +1,5 @@
+buy_price 2140.99
+GE 15
+AAPL 5
+GOOG 1
+TSM 16
